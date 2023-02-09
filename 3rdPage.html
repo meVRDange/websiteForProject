@@ -11,7 +11,7 @@
 
 <body>
     <h1>3RD PAGE</h1>
-    <form method="post" , action="#">
+    <form id="form" method="post" , action="">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Email address</label>
             <input type="email" name="email" class="form-control" id="exampleFormControlInput1"
@@ -30,15 +30,17 @@
         crossorigin="anonymous"></script>
     
     <script>
-        function validate() {
-            var email = document.getElementById(exampleFormControlInput1).innerText;
-            var message = document.getElementById(exampleFormControlTextarea1).innerText;
-            document.getElementById(email).innerHTML(email);
-            document.getElementById(message).innerHTML(message);
+        function validate(e) {
+            e.preventDefault();
+            console.log("hello")
+            var email = document.getElementById('exampleFormControlInput1').value;
+            var message = document.getElementById('exampleFormControlTextarea1').value;
+            document.getElementById('email').innerHTML=email;
+            document.getElementById('message').innerHTML = message;
         }
         function init() {
             document.getElementById('form').onsubmit = validate;
-          
+            console.log("hello");
         }
         window.onload = init;
     </script>
